@@ -269,7 +269,7 @@ p{
 /* Estilo do gradiente de fundo */
 #grad4 {
     width: 100%;
-    height: 100vh;
+    height: 370px;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -281,6 +281,7 @@ p{
     scroll-behavior: smooth; /* Rolagem suave */
     background-color: #000000;
     padding: 20px 0;
+    overflow: hidden;
 }
 #grad4::before {
     content: '';
@@ -318,7 +319,6 @@ p{
     display: none; /* Remove a barra de rolagem visível */
 }
 .figure {
-    margin-top: 10px;
     margin-left: 0px;
     width: 175px;
     height: 250px;
@@ -329,7 +329,7 @@ p{
     text-align: center;
 }
 h1 {
-    margin-top: 50px;
+    margin-top: 0px;
     margin-left: 50px;
     color: #fff;
     font-size: large;
