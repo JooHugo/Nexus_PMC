@@ -1,0 +1,466 @@
+/*Reset */
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #000;
+}
+/* Header */
+header {
+    grid-area: header;
+    background-color: #000000;
+    font-family: Helvetica, Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 8vw;
+    padding-top: 4px;
+}
+.Container {
+    position: relative;
+}
+#Logo {
+    width: auto; /* Ajuste automático da largura da imagem */
+    height: auto; /* Ajuste automático da altura */
+    position: relative; /* Posiciona o elemento de forma relativa à janela do navegador ou ao contêiner */
+    top: 0; /* Posiciona na parte superior */
+    left: 0; /* Posiciona no lado esquerdo */
+}
+/* Centralizar o menu de navegação */
+.nav {
+    flex: 1; /* Permite que o nav ocupe todo o espaço horizontal */
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo do nav */
+    padding-top: 8px;
+}
+.nav ul {
+    display: flex;
+    list-style-type: none;
+    gap: 15px;
+}
+/* Estilos dos links de navegação */
+.nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease;
+    font-size: large;
+}
+.nav ul li a:hover {
+    color: #73DC0F;
+}
+/* Botões de Cadastro e Entrar */
+.d-grid.gap-2.d-md-block {
+    display: flex;
+    gap: 15px;
+}
+/*Botão cadastrar-se*/
+.btn.btn-outline-light {
+    color: #ffffff;
+    background-color: #000000;
+    border-radius: 42px;
+    padding: 3px 15px;
+    text-align: center;
+    font-size: large;
+}
+/*Botão entrar*/
+.btn.btn-primary {
+    color: #000000;
+    border: none;
+    background-color: #fffcfc;
+    border-radius: 42px;
+    padding: 3px 15px;
+    text-align: center;
+    margin-right: 55px;
+    font-size: large;
+}
+.btn.btn-primary:hover {
+    background-color: #73DC0F;
+    transition: color 0.3s ease;
+}
+.btn.btn-outline-light:hover {
+    color: #73DC0F;
+    transition: color 0.3s ease;
+}
+/* Main and Footer */
+main {
+    grid-area: main;
+    background-color: #000000;
+}
+footer {
+    grid-area: footer;
+    background-color: #000000;
+    height: 50px;
+}
+/* Estilo do carrocel (gradiente + setas + imagens + indicadores) */
+#carouselExampleIndicators {
+    margin: 0; /* Remove qualquer margem extra */
+    padding: 0; /* Remove qualquer preenchimento extra */
+    width: 100%; /* Certifique-se de que o carrossel ocupa toda a largura */
+}
+
+#grad,
+#grad2,
+#grad3 {
+    width: 100%;
+    height: 95vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+#grad {
+    background-image: url('https://cdn.gameleap.com/images/articles/art_SdlsOozV2H/feature/1x.webp');
+}
+#grad2 {
+    background-image: url('https://image.tmdb.org/t/p/original/7sGeLiMVrD0QyKWjhEbLWmZIj2w.jpg');
+}
+#grad3 {
+    background-image: url('https://nichegamer.com/wp-content/uploads/2023/08/the-rising-of-the-shield-hero-8-28-2023-e1693232113760.jpg');
+}
+#grad::before,
+#grad2::before,
+#grad3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+    linear-gradient(to top, rgba(0, 0, 0) 1px , rgba(0, 0, 0, 0) ),
+    linear-gradient(to right, rgba(0, 0, 0, 0.9) 3%, rgba(255, 255, 255, 0) 99%);
+    z-index: 2;
+    pointer-events: none;
+}
+/* Estilizando indicadores do carrossel */
+.carousel-indicators {
+    position: absolute  ;
+    margin-bottom: 90px;
+}
+.carousel-indicators button {
+    background-color: #73DC0F; /* Cor de fundo dos indicadores */
+    border:0.2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50px; /* Faz os indicadores ficarem redondos */
+    opacity: 0.7;
+}
+.carousel-indicators .active {
+    background-color: #73DC0F; /* Cor do indicador ativo */
+    opacity: 1;
+    width: 50px;
+}
+.carousel-indicators button:hover {
+    opacity: 1;
+}
+/* Legenda e conteúdo */
+.caption {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    z-index: 2;
+    max-width: 30%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    z-index: 5;
+}
+
+/* Logo na legenda */
+.caption-logo {
+    max-width: 50%;
+    height: auto;
+    margin-bottom: 10px;
+}
+/* Descrição da legenda */
+.caption-description {
+    line-height: 1.5;
+    color: #ffffff;
+    opacity: 0.9;
+    width: 400px; /* Largura da caixa */
+    text-align: left;
+    flex-wrap: wrap;
+}
+.caption-description .responsive-text {
+    font-size: clamp(1rem, 5vw, 3rem); /* Mínimo de 1rem, adaptável até 5vw, máximo de 3rem */
+}
+/* Botão da legenda */
+.caption-image{
+    width: 20px;
+    height: 20px;
+}
+.caption-button {
+    background-color: #73DC0F;
+    color: #000000;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+.caption-button:hover {
+    background-color: #56a70f;
+}
+
+p{
+    font-size: 15px;
+}
+
+/* setas */
+#CarouselExempleIndicators
+.carousel-control-prev{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: 98% left;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    background: 0 0;
+    border: 0;
+    opacity: 1;
+    transition: opacity .15s ease;
+}
+.carousel-control-next{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: 98% right;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    background: 0 0;
+    border: 0;
+    opacity: 1;
+    transition: opacity .15s ease;
+}
+
+.Trailer{
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+/* Novidades */
+/* Estilo do gradiente de fundo */
+#grad4 {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap; /* Impede quebra de linha */
+    gap: 10px;
+    overflow-x: scroll; /* Rolagem horizontal */
+    scroll-behavior: smooth; /* Rolagem suave */
+    background-color: #000000;
+    padding: 20px 0;
+}
+#grad4::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Gradiente cobrindo toda a altura */
+    height: 100vh;
+    background: linear-gradient(to left, rgb(0, 0, 0, 0.7) 5px, rgba(255, 255, 255, 0)); /* Ajustado para cobrir totalmente à esquerda */
+    z-index: 5;
+    pointer-events: none;
+}
+/* Contêiner novidades */
+#novidades {
+    overflow: hidden;
+}
+.figure-container {
+    display: flex;
+    gap: 15px;
+    padding: 10px 20px;
+    position: relative;
+    overflow: hidden; /* Remove a barra de rolagem */
+}
+/* Layout das figuras */
+#grad4 .figure-container {
+    display: flex;
+    gap: 10px; /* Espaçamento entre figuras */
+    padding: 8px;
+    position: relative;
+    z-index: 2;
+    overflow-x: scroll; /* Permite rolagem horizontal */
+    scroll-behavior: smooth; /* Suaviza a rolagem */
+}
+.figure-container::-webkit-scrollbar {
+    display: none; /* Remove a barra de rolagem visível */
+}
+.figure {
+    margin-top: 10px;
+    margin-left: 30px;
+    width: 200px;
+    height: 300px;
+    flex-shrink: 0; /* Impede que as figuras encolham */
+}
+.figure-caption {
+    color: #fff;
+    text-align: center;
+}
+h1 {
+    margin-top: 50px;
+    margin-left: 50px;
+    color: #fff;
+    font-size: large;
+}
+@media screen and (max-width: 1080px){
+    .figure-container{
+        overflow: scroll;
+    }
+    .figure{
+        width: auto;
+        flex-shrink: 0;
+    }
+}
+
+/* Estilo para as setas de navegação no primeiro carrossel*/
+#carouselExampleIndicators .carousel-control-prev,
+#carouselExampleIndicators .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0);
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 10;
+
+}
+
+/* Estilo para as setas de navegação no carrossel de novidades */
+#animeCarousel .carousel-control-prev,
+#animeCarousel .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-100%);
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0);
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 10; /* Garante que as setas fiquem sobre o conteúdo */
+}
+.carousel-control.prev {
+    max-height: 40px;
+    left: 10px;
+}
+.carousel-control.next {
+    max-height: 40px;
+    right: 10px;
+} */
+footer {
+    background-color: #343a40;
+    padding: 20px 0;
+    color: white;
+    font-size: 14px;
+}
+
+
+  .carousel {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 10px;
+    overflow: hidden;
+    background-color: #000000;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .carousel__viewport {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .carousel__container {
+    display: flex;
+    transition: transform ease-in-out;
+    gap: 10px;
+  }
+
+  .carousel__slide {
+    flex: 0 0 auto;
+    width: 205px;
+    text-align: center;
+  }
+
+  .carousel__slide img {
+    width: 100%;
+    justify-items: center;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .carousel__button {
+    position: absolute;
+    top: 150px;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 6;
+  }
+
+  .carousel__button--prev {
+    left: 10px;
+    box-shadow: inset;
+  }
+
+  .carousel__button--next {
+    right: 10px;
+  }
+
+  .figure-caption {
+    margin-top: 5px;
+    font-size: 1rem;
+    color: #ffffff;
+  }
+  
+  
